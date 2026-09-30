@@ -1,0 +1,2048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KIDORA | Kids Clothing</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffafb;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #f6dce5;
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 76px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #f29ab4;
+}
+
+.cart-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f7adc2;
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.cart-button:hover {
+    transform: scale(1.08);
+    background: #ed8eaa;
+}
+
+#cartCount {
+    position: absolute;
+    right: -3px;
+    top: -3px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #333;
+    color: white;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 11px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 470px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(circle at 20% 30%, #ffdce8 0, transparent 35%),
+        radial-gradient(circle at 85% 70%, #ffeaf1 0, transparent 35%),
+        linear-gradient(135deg, #ffffff, #fff3f7);
+
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 750px;
+    animation: heroIn 1s ease;
+}
+
+.small-title {
+    color: #e58ba5;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    color: #f29ab4;
+
+    font-size: clamp(45px, 9vw, 90px);
+
+    letter-spacing: 10px;
+
+    margin-bottom: 10px;
+}
+
+.hero p {
+    color: #777;
+    font-size: 18px;
+
+    margin-bottom: 25px;
+}
+
+.shop-btn {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #f3a1b9;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    box-shadow: 0 8px 25px rgba(242,154,180,.25);
+
+    transition: .3s;
+}
+
+.shop-btn:hover {
+    transform: translateY(-3px);
+    background: #ed89a9;
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   DELIVERY
+========================= */
+
+.delivery-bar {
+    padding: 13px 15px;
+
+    text-align: center;
+
+    background: #f8b4c8;
+    color: white;
+
+    font-weight: bold;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 65px 20px 90px;
+}
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    color: #444;
+    font-size: 34px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: #999;
+}
+
+/*
+   ALL PRODUCTS STAY TOGETHER
+*/
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.product-card {
+    position: relative;
+
+    background: white;
+
+    overflow: hidden;
+
+    border: 1px solid #f5dce4;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 8px 30px rgba(80,30,50,.06);
+
+    transition: .35s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(80,30,50,.12);
+}
+
+.product-image {
+    height: 260px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #fce8ef;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.06);
+}
+
+.discount-badge {
+    position: absolute;
+
+    top: 12px;
+    left: 12px;
+
+    padding: 7px 10px;
+
+    border-radius: 20px;
+
+    background: #ef8eaa;
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    z-index: 2;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-name {
+    color: #444;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.color {
+    color: #999;
+
+    font-size: 13px;
+
+    margin-bottom: 12px;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+}
+
+.old-price {
+    color: #aaa;
+
+    font-size: 13px;
+
+    text-decoration: line-through;
+}
+
+.sale-price {
+    color: #ef86a4;
+
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.saved {
+    color: #68a779;
+
+    background: #edf8ef;
+
+    padding: 4px 7px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+}
+
+.add-btn {
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #f7b0c5;
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.add-btn:hover {
+    background: #ed8eab;
+}
+
+/* =========================
+   CART OVERLAY
+========================= */
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1999;
+
+    background: rgba(0,0,0,.35);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart {
+    position: fixed;
+
+    top: 0;
+    right: -430px;
+
+    width: min(420px,94vw);
+    height: 100%;
+
+    z-index: 2000;
+
+    background: white;
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    box-shadow:
+        -10px 0 40px rgba(0,0,0,.12);
+
+    transition: .35s ease;
+}
+
+.cart.active {
+    right: 0;
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header h2 {
+    color: #e98da9;
+}
+
+.close-cart {
+    width: 35px;
+    height: 35px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f8e3e9;
+    color: #d87996;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.cart-item {
+    display: grid;
+
+    grid-template-columns:
+        65px 1fr auto;
+
+    gap: 12px;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.cart-item img {
+    width: 65px;
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.cart-item-info {
+    color: #999;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+}
+
+.remove-item {
+    border: none;
+
+    background: transparent;
+
+    color: #e788a4;
+
+    cursor: pointer;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+}
+
+.cart-total {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: #fff4f7;
+
+    border-radius: 15px;
+}
+
+.total-line {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.total-final {
+    padding-top: 12px;
+
+    margin-top: 12px;
+
+    border-top: 1px solid #f2dce3;
+
+    color: #e98ba7;
+
+    font-size: 21px;
+    font-weight: 900;
+}
+
+.whatsapp-btn {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 15px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: #25D366;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-2px);
+}
+
+.empty-cart {
+    text-align: center;
+
+    color: #999;
+
+    padding: 50px 10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    background: #fff0f5;
+
+    color: #999;
+}
+
+footer strong {
+    color: #e991aa;
+
+    letter-spacing: 4px;
+
+    font-size: 20px;
+}
+
+.footer-tagline {
+    margin-top: 10px;
+}
+
+.footer-copy {
+    margin-top: 14px;
+
+    font-size: 12px;
+
+    color: #aaa;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px) {
+
+    .products-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:550px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .hero {
+        min-height: 420px;
+    }
+
+    .hero h1 {
+        letter-spacing: 6px;
+    }
+
+    .products-grid {
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 12px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+
+    .product-info {
+        padding: 13px;
+    }
+
+    .product-name {
+        font-size: 14px;
+    }
+
+    .sale-price {
+        font-size: 17px;
+    }
+
+    .old-price {
+        font-size: 11px;
+    }
+
+    .add-btn {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="navbar">
+
+    <div class="logo">
+        KIDORA
+    </div>
+
+    <button
+        class="cart-button"
+        onclick="openCart()"
+    >
+        🛍️
+
+        <span id="cartCount">
+            0
+        </span>
+
+    </button>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="small-title">
+        Little Looks, Big Smiles
+    </div>
+
+    <h1>
+        KIDORA
+    </h1>
+
+    <p>
+        Cute, comfortable & charming outfits
+        for little girls.
+    </p>
+
+    <a
+        href="#products"
+        class="shop-btn"
+    >
+        Shop Collection
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DELIVERY
+========================= -->
+
+<div class="delivery-bar">
+
+    ✨ Free Delivery on Orders Over Rs. 5,000 ✨
+
+</div>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+    class="products-section"
+    id="products"
+>
+
+<div class="section-heading">
+
+    <h2>
+        Our Collection
+    </h2>
+
+    <p>
+        Sweet styles made for little moments.
+    </p>
+
+</div>
+
+
+<div
+    class="products-grid"
+    id="productsGrid"
+>
+
+
+<!-- ==================================================
+     PRODUCT 1
+================================================== -->
+
+<div
+class="product-card"
+
+data-name="Pink Princess Dress"
+data-color="Baby Pink"
+data-price="200"
+
+data-image="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-image">
+
+    <img
+        src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=80"
+        alt="Pink Princess Dress"
+    >
+
+    <div class="discount-badge discount"></div>
+
+</div>
+
+
+<div class="product-info">
+
+    <div class="product-name">
+        Pink Princess Dress
+    </div>
+
+    <div class="color">
+        Color: Baby Pink
+    </div>
+
+    <div class="price-row">
+
+        <span class="old-price"></span>
+
+        <span class="sale-price">
+            Rs. 200
+        </span>
+
+        <span class="saved"></span>
+
+    </div>
+
+    <button
+        class="add-btn"
+        onclick="addToCart(this)"
+    >
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     PRODUCT 2
+================================================== -->
+
+<div
+class="product-card"
+
+data-name="Floral Party Frock"
+data-color="White & Pink"
+data-price="200"
+
+data-image="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-image">
+
+    <img
+        src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=700&q=80"
+        alt="Floral Party Frock"
+    >
+
+    <div class="discount-badge discount"></div>
+
+</div>
+
+
+<div class="product-info">
+
+    <div class="product-name">
+        Floral Party Frock
+    </div>
+
+    <div class="color">
+        Color: White & Pink
+    </div>
+
+    <div class="price-row">
+
+        <span class="old-price"></span>
+
+        <span class="sale-price">
+            Rs. 200
+        </span>
+
+        <span class="saved"></span>
+
+    </div>
+
+    <button
+        class="add-btn"
+        onclick="addToCart(this)"
+    >
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     PRODUCT 3
+================================================== -->
+
+<div
+class="product-card"
+
+data-name="Cute Bow Outfit"
+data-color="Soft Pink"
+data-price="200"
+
+data-image="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-image">
+
+    <img
+        src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=700&q=80"
+        alt="Cute Bow Outfit"
+    >
+
+    <div class="discount-badge discount"></div>
+
+</div>
+
+
+<div class="product-info">
+
+    <div class="product-name">
+        Cute Bow Outfit
+    </div>
+
+    <div class="color">
+        Color: Soft Pink
+    </div>
+
+    <div class="price-row">
+
+        <span class="old-price"></span>
+
+        <span class="sale-price">
+            Rs. 200
+        </span>
+
+        <span class="saved"></span>
+
+    </div>
+
+    <button
+        class="add-btn"
+        onclick="addToCart(this)"
+    >
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- ==================================================
+     PRODUCT 4
+================================================== -->
+
+<div
+class="product-card"
+
+data-name="Little Angel Dress"
+data-color="Cream Pink"
+data-price="200"
+
+data-image="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=80"
+>
+
+<div class="product-image">
+
+    <img
+        src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=80"
+        alt="Little Angel Dress"
+    >
+
+    <div class="discount-badge discount"></div>
+
+</div>
+
+
+<div class="product-info">
+
+    <div class="product-name">
+        Little Angel Dress
+    </div>
+
+    <div class="color">
+        Color: Cream Pink
+    </div>
+
+    <div class="price-row">
+
+        <span class="old-price"></span>
+
+        <span class="sale-price">
+            Rs. 200
+        </span>
+
+        <span class="saved"></span>
+
+    </div>
+
+    <button
+        class="add-btn"
+        onclick="addToCart(this)"
+    >
+        Add to Cart
+    </button>
+
+</div>
+
+</div>
+
+
+</div>
+</section>
+
+
+<!-- =========================
+     CART BACKDROP
+========================= -->
+
+<div
+class="cart-overlay"
+id="cartOverlay"
+onclick="closeCart()"
+></div>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+class="cart"
+id="cart"
+>
+
+<div class="cart-header">
+
+    <h2>
+        Your Cart
+    </h2>
+
+    <button
+        class="close-cart"
+        onclick="closeCart()"
+    >
+        ×
+    </button>
+
+</div>
+
+
+<div id="cartItems">
+
+    <div class="empty-cart">
+        Your cart is empty 🛍️
+    </div>
+
+</div>
+
+
+<div
+id="cartSummary"
+style="display:none;"
+>
+
+<div class="cart-total">
+
+    <div class="total-line">
+
+        <span>
+            Items
+        </span>
+
+        <span id="itemsTotal">
+            Rs. 0
+        </span>
+
+    </div>
+
+
+    <div class="total-line">
+
+        <span>
+            You Save
+        </span>
+
+        <span id="savedTotal">
+            Rs. 0
+        </span>
+
+    </div>
+
+
+    <div class="total-line total-final">
+
+        <span>
+            Total
+        </span>
+
+        <span id="grandTotal">
+            Rs. 0
+        </span>
+
+    </div>
+
+</div>
+
+
+<button
+class="whatsapp-btn"
+onclick="orderOnWhatsApp()"
+>
+    💬 Order on WhatsApp
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<strong>
+    KIDORA
+</strong>
+
+<div class="footer-tagline">
+    Little styles. Big smiles. 💗
+</div>
+
+<div class="footer-copy">
+    © 2026 KIDORA. All Rights Reserved.
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   KIDORA WHATSAPP
+===================================================== */
+
+/*
+   Your Pakistani number:
+
+   03469030193
+
+   International WhatsApp format:
+
+   +923469030193
+
+   IMPORTANT:
+   We remove the + from the URL number.
+*/
+
+const whatsappNumber = "923469030193";
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+let cart = [];
+
+
+/* =====================================================
+   DAILY OFFER SYSTEM
+===================================================== */
+
+/*
+   IMPORTANT:
+
+   The offer system uses Pakistan time.
+
+   Offers are stored for each day in localStorage.
+
+   Therefore:
+
+   - Refreshing the page does NOT change offers.
+   - Closing/reopening website does NOT change offers.
+   - Offers change when the Pakistan date changes.
+*/
+
+
+function getPakistanDate() {
+
+    return new Intl.DateTimeFormat(
+        "en-CA",
+        {
+            timeZone: "Asia/Karachi",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        }
+    ).format(
+        new Date()
+    );
+
+}
+
+
+/* =====================================================
+   RANDOM NUMBER
+===================================================== */
+
+function randomNumber() {
+
+    return Math.random();
+
+}
+
+
+/* =====================================================
+   CREATE TODAY'S OFFERS
+===================================================== */
+
+function createDailyOffers() {
+
+    const today =
+        getPakistanDate();
+
+
+    const oldData =
+        JSON.parse(
+            localStorage.getItem(
+                "kidoraOffers"
+            ) || "null"
+        );
+
+
+    /*
+       If today's offers already exist,
+       keep them exactly the same.
+    */
+
+    if (
+        oldData &&
+        oldData.date === today
+    ) {
+
+        return oldData.offers;
+
+    }
+
+
+    const productCount =
+        document.querySelectorAll(
+            ".product-card"
+        ).length;
+
+
+    let offers =
+        new Array(productCount).fill(0);
+
+
+    /*
+       ------------------------------
+       5% OFF
+       ------------------------------
+
+       5% MUST appear every day.
+
+       Pick one random product.
+    */
+
+    const fiveIndex =
+        Math.floor(
+            randomNumber() * productCount
+        );
+
+    offers[fiveIndex] = 5;
+
+
+    /*
+       ------------------------------
+       10% OFF
+       ------------------------------
+
+       If yesterday had 10%:
+
+       60% = continue
+       40% = disappear
+
+       If yesterday didn't have it:
+
+       50% chance to introduce it.
+    */
+
+    let tenActive = false;
+
+    if (
+        oldData &&
+        oldData.offers.includes(10)
+    ) {
+
+        tenActive =
+            randomNumber() < 0.60;
+
+    } else {
+
+        tenActive =
+            randomNumber() < 0.50;
+
+    }
+
+
+    if (tenActive) {
+
+        let available = [];
+
+        for (
+            let i = 0;
+            i < productCount;
+            i++
+        ) {
+
+            if (
+                offers[i] === 0
+            ) {
+
+                available.push(i);
+
+            }
+
+        }
+
+
+        if (available.length > 0) {
+
+            const index =
+                available[
+                    Math.floor(
+                        randomNumber()
+                        * available.length
+                    )
+                ];
+
+            offers[index] = 10;
+
+        }
+
+    }
+
+
+    /*
+       ------------------------------
+       15% OFF
+       ------------------------------
+
+       If yesterday had 15%:
+
+       60% = continue
+       40% = disappear
+
+       If yesterday didn't have it:
+
+       50% chance to introduce it.
+    */
+
+    let fifteenActive = false;
+
+    if (
+        oldData &&
+        oldData.offers.includes(15)
+    ) {
+
+        fifteenActive =
+            randomNumber() < 0.60;
+
+    } else {
+
+        fifteenActive =
+            randomNumber() < 0.50;
+
+    }
+
+
+    if (fifteenActive) {
+
+        let available = [];
+
+        for (
+            let i = 0;
+            i < productCount;
+            i++
+        ) {
+
+            if (
+                offers[i] === 0
+            ) {
+
+                available.push(i);
+
+            }
+
+        }
+
+
+        if (available.length > 0) {
+
+            const index =
+                available[
+                    Math.floor(
+                        randomNumber()
+                        * available.length
+                    )
+                ];
+
+            offers[index] = 15;
+
+        }
+
+    }
+
+
+    /*
+       Save today's offers.
+    */
+
+    localStorage.setItem(
+
+        "kidoraOffers",
+
+        JSON.stringify({
+
+            date: today,
+
+            offers: offers
+
+        })
+
+    );
+
+
+    return offers;
+
+}
+
+
+/* =====================================================
+   APPLY OFFERS TO PRODUCTS
+===================================================== */
+
+function applyDailyOffers() {
+
+    const products =
+        document.querySelectorAll(
+            ".product-card"
+        );
+
+
+    const offers =
+        createDailyOffers();
+
+
+    products.forEach(
+        (product, index) => {
+
+            const finalPrice =
+                Number(
+                    product.dataset.price
+                );
+
+
+            const discount =
+                offers[index] || 0;
+
+
+            const originalPrice =
+                discount > 0
+
+                ? finalPrice /
+                  (1 - discount / 100)
+
+                : finalPrice;
+
+
+            const oldPriceElement =
+                product.querySelector(
+                    ".old-price"
+                );
+
+
+            const salePriceElement =
+                product.querySelector(
+                    ".sale-price"
+                );
+
+
+            const discountElement =
+                product.querySelector(
+                    ".discount"
+                );
+
+
+            const savedElement =
+                product.querySelector(
+                    ".saved"
+                );
+
+
+            salePriceElement.textContent =
+                "Rs. " +
+                finalPrice.toFixed(0);
+
+
+            if (discount > 0) {
+
+                oldPriceElement.textContent =
+                    "Rs. " +
+                    originalPrice.toFixed(0);
+
+
+                discountElement.textContent =
+                    discount +
+                    "% OFF";
+
+
+                savedElement.textContent =
+                    "Save Rs. " +
+                    (
+                        originalPrice -
+                        finalPrice
+                    ).toFixed(0);
+
+            }
+
+            else {
+
+                oldPriceElement.textContent =
+                    "";
+
+
+                discountElement.textContent =
+                    "";
+
+
+                savedElement.textContent =
+                    "";
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   GET PRODUCT DISCOUNT
+===================================================== */
+
+function getProductDiscount(product) {
+
+    const products =
+        [...document.querySelectorAll(
+            ".product-card"
+        )];
+
+
+    const index =
+        products.indexOf(product);
+
+
+    const offers =
+        createDailyOffers();
+
+
+    return offers[index] || 0;
+
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart(button) {
+
+    const product =
+        button.closest(
+            ".product-card"
+        );
+
+
+    const name =
+        product.dataset.name;
+
+
+    const color =
+        product.dataset.color;
+
+
+    const price =
+        Number(
+            product.dataset.price
+        );
+
+
+    const image =
+        product.dataset.image;
+
+
+    const discount =
+        getProductDiscount(
+            product
+        );
+
+
+    const originalPrice =
+        discount > 0
+
+        ? price /
+          (1 - discount / 100)
+
+        : price;
+
+
+    cart.push({
+
+        name: name,
+
+        color: color,
+
+        price: price,
+
+        originalPrice:
+            originalPrice,
+
+        discount: discount,
+
+        saved:
+            originalPrice - price,
+
+        image: image
+
+    });
+
+
+    updateCart();
+
+
+    button.textContent =
+        "✓ Added";
+
+
+    setTimeout(
+        () => {
+
+            button.textContent =
+                "Add to Cart";
+
+        },
+        900
+    );
+
+}
+
+
+/* =====================================================
+   UPDATE CART
+===================================================== */
+
+function updateCart() {
+
+    const cartItems =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    const cartSummary =
+        document.getElementById(
+            "cartSummary"
+        );
+
+
+    const cartCount =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    cartCount.textContent =
+        cart.length;
+
+
+    if (
+        cart.length === 0
+    ) {
+
+        cartItems.innerHTML = `
+
+            <div class="empty-cart">
+                Your cart is empty 🛍️
+            </div>
+
+        `;
+
+
+        cartSummary.style.display =
+            "none";
+
+
+        return;
+
+    }
+
+
+    cartSummary.style.display =
+        "block";
+
+
+    cartItems.innerHTML =
+        "";
+
+
+    let total = 0;
+
+    let saved = 0;
+
+
+    cart.forEach(
+        (item, index) => {
+
+            total +=
+                item.price;
+
+
+            saved +=
+                item.saved;
+
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.className =
+                "cart-item";
+
+
+            div.innerHTML = `
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
+
+                <div>
+
+                    <div class="cart-item-name">
+                        ${item.name}
+                    </div>
+
+                    <div class="cart-item-info">
+                        Color: ${item.color}
+                    </div>
+
+                    <div class="cart-item-info">
+                        Original:
+                        Rs. ${item.originalPrice.toFixed(0)}
+                    </div>
+
+                    <div class="cart-item-info">
+                        Discount:
+                        ${item.discount}%
+                    </div>
+
+                    <div class="cart-item-info">
+                        Price:
+                        Rs. ${item.price.toFixed(0)}
+                    </div>
+
+                    <button
+                        class="remove-item"
+                        onclick="removeItem(${index})"
+                    >
+                        Remove
+                    </button>
+
+                </div>
+
+                <strong>
+                    Rs. ${item.price.toFixed(0)}
+                </strong>
+
+            `;
+
+
+            cartItems.appendChild(
+                div
+            );
+
+        }
+    );
+
+
+    document.getElementById(
+        "itemsTotal"
+    ).textContent =
+        "Rs. " +
+        total.toFixed(0);
+
+
+    document.getElementById(
+        "savedTotal"
+    ).textContent =
+        "Rs. " +
+        saved.toFixed(0);
+
+
+    document.getElementById(
+        "grandTotal"
+    ).textContent =
+        "Rs. " +
+        total.toFixed(0);
+
+}
+
+
+/* =====================================================
+   REMOVE ITEM
+===================================================== */
+
+function removeItem(index) {
+
+    cart.splice(
+        index,
+        1
+    );
+
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   OPEN CART
+===================================================== */
+
+function openCart() {
+
+    document
+        .getElementById("cart")
+        .classList.add("active");
+
+
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
+
+}
+
+
+/* =====================================================
+   CLOSE CART
+===================================================== */
+
+function closeCart() {
+
+    document
+        .getElementById("cart")
+        .classList.remove("active");
+
+
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
+
+}
+
+
+/* =====================================================
+   WHATSAPP ORDER
+===================================================== */
+
+function orderOnWhatsApp() {
+
+    if (
+        cart.length === 0
+    ) {
+
+        alert(
+            "Your cart is empty."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       Build the COMPLETE order.
+    */
+
+    let message =
+        "Hi KIDORA! 👋\n\n" +
+
+        "I want to place an order.\n\n" +
+
+        "ORDER DETAILS\n" +
+
+        "━━━━━━━━━━━━━━━━\n";
+
+
+    let total = 0;
+
+    let totalSaved = 0;
+
+
+    cart.forEach(
+        (item, index) => {
+
+            total +=
+                item.price;
+
+
+            totalSaved +=
+                item.saved;
+
+
+            message +=
+                `\n${index + 1}. ${item.name}\n`;
+
+
+            message +=
+                `Color: ${item.color}\n`;
+
+
+            message +=
+                `Original Price: Rs. ${item.originalPrice.toFixed(0)}\n`;
+
+
+            message +=
+                `Discount: ${item.discount}% OFF\n`;
+
+
+            message +=
+                `Sale Price: Rs. ${item.price.toFixed(0)}\n`;
+
+
+            message +=
+                `Saved: Rs. ${item.saved.toFixed(0)}\n`;
+
+        }
+    );
+
+
+    message +=
+        "\n━━━━━━━━━━━━━━━━\n";
+
+
+    message +=
+        `TOTAL: Rs. ${total.toFixed(0)}\n`;
+
+
+    message +=
+        `TOTAL SAVED: Rs. ${totalSaved.toFixed(0)}\n`;
+
+
+    message +=
+        `ITEMS: ${cart.length}\n`;
+
+
+    message +=
+        "\nPlease confirm my order. 💗";
+
+
+    /*
+       IMPORTANT:
+
+       encodeURIComponent makes sure:
+       - spaces work
+       - line breaks work
+       - & works
+       - product names work
+       - emojis work
+       - prices work
+    */
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(
+            message
+        );
+
+
+    /*
+       Open WhatsApp.
+    */
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+applyDailyOffers();
+
+</script>
+
+</body>
+</html>

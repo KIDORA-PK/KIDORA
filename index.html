@@ -4,9 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>KIDORA | Kids Clothing</title>
+<title>KIDORA | Little Looks, Big Smiles</title>
 
 <style>
+
+/* =========================================================
+   KIDORA WEBSITE
+   Beginner-friendly HTML + CSS + JavaScript
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,90 +25,82 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #fffafb;
+    background: #fff;
     color: #333;
 }
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+   ========================================================= */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,255,255,.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid #f6dce5;
-}
 
-.navbar {
-    max-width: 1200px;
-    height: 76px;
-    margin: auto;
-    padding: 0 20px;
+    height: 72px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-bottom: 1px solid #f6dce6;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 0 6%;
 }
 
 .logo {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: 5px;
-    color: #f29ab4;
+    color: #df86a7;
+
+    font-size: 27px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
 }
 
 .cart-button {
-    position: relative;
-
-    width: 48px;
-    height: 48px;
-
     border: none;
-    border-radius: 50%;
 
-    background: #f7adc2;
-    color: white;
+    background: #ffe8f0;
+    color: #cf668c;
 
-    font-size: 20px;
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    font-weight: bold;
+    font-size: 15px;
+
     cursor: pointer;
 
-    transition: .3s;
+    transition: 0.25s;
 }
 
 .cart-button:hover {
-    transform: scale(1.08);
-    background: #ed8eaa;
+    background: #ffdce8;
+    transform: scale(1.04);
 }
 
-#cartCount {
-    position: absolute;
-    right: -3px;
-    top: -3px;
 
-    width: 20px;
-    height: 20px;
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
 
-    background: #333;
-    color: white;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 11px;
+#homePage {
+    display: block;
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero {
-    min-height: 470px;
+    min-height: 520px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 40%,
+            #fff0f5
+        );
 
     display: flex;
     align-items: center;
@@ -110,56 +108,52 @@ header {
 
     text-align: center;
 
-    padding: 60px 20px;
-
-    background:
-        radial-gradient(circle at 20% 30%, #ffdce8 0, transparent 35%),
-        radial-gradient(circle at 85% 70%, #ffeaf1 0, transparent 35%),
-        linear-gradient(135deg, #ffffff, #fff3f7);
-
-    overflow: hidden;
+    padding: 70px 20px;
 }
 
 .hero-content {
-    max-width: 750px;
-    animation: heroIn 1s ease;
+    max-width: 700px;
+
+    animation: fadeUp 0.8s ease;
 }
 
 .small-title {
-    color: #e58ba5;
+    color: #d7789b;
 
     font-size: 14px;
-    font-weight: bold;
 
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    letter-spacing: 4px;
 
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    color: #f29ab4;
+    color: #df86a7;
 
-    font-size: clamp(45px, 9vw, 90px);
+    font-size: 58px;
 
-    letter-spacing: 10px;
+    line-height: 1.1;
 
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .hero p {
     color: #777;
+
     font-size: 18px;
 
-    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
-.shop-btn {
+.shop-button {
     display: inline-block;
 
-    padding: 14px 28px;
+    margin-top: 28px;
 
-    background: #f3a1b9;
+    padding: 14px 30px;
+
+    background: #e58aaa;
+
     color: white;
 
     text-decoration: none;
@@ -168,268 +162,481 @@ header {
 
     font-weight: bold;
 
-    box-shadow: 0 8px 25px rgba(242,154,180,.25);
-
-    transition: .3s;
+    transition: 0.3s;
 }
 
-.shop-btn:hover {
+.shop-button:hover {
+    background: #d77499;
+
     transform: translateY(-3px);
-    background: #ed89a9;
 }
 
-@keyframes heroIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =========================
-   DELIVERY
-========================= */
+/* =========================================================
+   FREE DELIVERY
+   ========================================================= */
 
 .delivery-bar {
-    padding: 13px 15px;
+    background: #ffe8f0;
+
+    color: #c95e87;
 
     text-align: center;
 
-    background: #f8b4c8;
-    color: white;
+    padding: 13px;
 
     font-weight: bold;
 }
 
-/* =========================
+
+/* =========================================================
    PRODUCTS
-========================= */
+   ========================================================= */
 
 .products-section {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 65px 20px 90px;
+    padding: 70px 6%;
 }
 
-.section-heading {
+.section-title {
     text-align: center;
 
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
-.section-heading h2 {
-    color: #444;
-    font-size: 34px;
+.section-title h2 {
+    color: #df86a7;
 
-    margin-bottom: 8px;
+    font-size: 35px;
 }
 
-.section-heading p {
-    color: #999;
-}
+.section-title p {
+    color: #888;
 
-/*
-   ALL PRODUCTS STAY TOGETHER
-*/
+    margin-top: 10px;
+}
 
 .products-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, 1fr);
+        repeat(5, 1fr);
 
     gap: 18px;
 }
 
 .product-card {
-    position: relative;
-
     background: white;
+
+    border: 1px solid #f3dce5;
+
+    border-radius: 18px;
 
     overflow: hidden;
 
-    border: 1px solid #f5dce4;
+    cursor: pointer;
 
-    border-radius: 20px;
+    transition: 0.3s;
 
     box-shadow:
-        0 8px 30px rgba(80,30,50,.06);
-
-    transition: .35s;
+        0 6px 20px
+        rgba(220, 130, 160, 0.07);
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
     box-shadow:
-        0 15px 35px rgba(80,30,50,.12);
+        0 15px 35px
+        rgba(220, 130, 160, 0.16);
 }
 
 .product-image {
-    height: 260px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    background: #fce8ef;
-}
-
-.product-image img {
     width: 100%;
-    height: 100%;
+
+    height: 240px;
 
     object-fit: cover;
 
-    transition: .5s;
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.06);
-}
-
-.discount-badge {
-    position: absolute;
-
-    top: 12px;
-    left: 12px;
-
-    padding: 7px 10px;
-
-    border-radius: 20px;
-
-    background: #ef8eaa;
-    color: white;
-
-    font-size: 12px;
-    font-weight: bold;
-
-    z-index: 2;
+    display: block;
 }
 
 .product-info {
-    padding: 18px;
+    padding: 16px;
 }
 
 .product-name {
-    color: #444;
-
     font-size: 17px;
+
     font-weight: bold;
 
-    margin-bottom: 8px;
+    color: #444;
 }
 
-.color {
+.product-color {
     color: #999;
 
     font-size: 13px;
 
-    margin-bottom: 12px;
+    margin-top: 6px;
 }
 
 .price-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 15px;
+    margin-top: 12px;
 }
 
 .old-price {
     color: #aaa;
 
-    font-size: 13px;
-
     text-decoration: line-through;
+
+    margin-right: 7px;
+
+    font-size: 13px;
 }
 
 .sale-price {
-    color: #ef86a4;
+    color: #d96f95;
 
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 18px;
+
+    font-weight: bold;
 }
 
-.saved {
-    color: #68a779;
+.discount-badge {
+    display: inline-block;
 
-    background: #edf8ef;
+    margin-top: 10px;
 
-    padding: 4px 7px;
+    background: #ffe1eb;
 
-    border-radius: 10px;
+    color: #cf6388;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
 
     font-size: 11px;
+
+    font-weight: bold;
 }
 
-.add-btn {
-    width: 100%;
 
-    padding: 12px;
+/* =========================================================
+   FULL PRODUCT PAGE
+   ========================================================= */
 
+#productPage {
+    display: none;
+
+    min-height: calc(100vh - 72px);
+
+    background: #fff;
+}
+
+.product-page-top {
+    padding: 22px 6%;
+
+    border-bottom: 1px solid #f5e2e9;
+}
+
+.back-button {
     border: none;
-    border-radius: 12px;
 
-    background: #f7b0c5;
-    color: white;
+    background: #ffe8f0;
+
+    color: #cf668c;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
 
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: .3s;
+    transition: 0.25s;
 }
 
-.add-btn:hover {
-    background: #ed8eab;
+.back-button:hover {
+    background: #ffdce8;
+
+    transform: translateX(-3px);
 }
 
-/* =========================
-   CART OVERLAY
-========================= */
+.product-page-content {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 40px 6% 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.1fr 1fr;
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+
+/* BIG PRODUCT IMAGE */
+
+.product-page-image-box {
+    background: #fff7fa;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border: 1px solid #f5dce6;
+}
+
+.product-page-image {
+    width: 100%;
+
+    height: 650px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* PRODUCT DETAILS */
+
+.product-page-details {
+    padding-top: 10px;
+}
+
+.product-page-details h1 {
+    color: #df86a7;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 10px;
+}
+
+.product-page-color {
+    color: #888;
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+.product-description {
+    color: #666;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+}
+
+
+/* PRICE */
+
+.product-price-box {
+    margin-bottom: 25px;
+}
+
+.product-old-price {
+    color: #aaa;
+
+    text-decoration: line-through;
+
+    font-size: 19px;
+
+    margin-right: 8px;
+}
+
+.product-sale-price {
+    color: #d96f95;
+
+    font-size: 32px;
+
+    font-weight: bold;
+}
+
+.save-text {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #55a878;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* SIZE */
+
+.option-title {
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+    color: #444;
+}
+
+.size-options {
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 28px;
+
+    flex-wrap: wrap;
+}
+
+.size-button {
+    padding: 13px 18px;
+
+    border: 1px solid #e7a8bd;
+
+    background: white;
+
+    color: #d36f93;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.size-button:hover {
+    background: #fff0f5;
+}
+
+.size-button.active {
+    background: #e58aaa;
+
+    color: white;
+
+    border-color: #e58aaa;
+}
+
+
+/* QUANTITY */
+
+.quantity-section {
+    margin-bottom: 25px;
+}
+
+.quantity-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+.quantity-box button {
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffe8f0;
+
+    color: #d36f93;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.quantity-number {
+    font-weight: bold;
+
+    min-width: 20px;
+
+    text-align: center;
+}
+
+
+/* ADD TO CART */
+
+.add-cart-button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #e58aaa;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.add-cart-button:hover {
+    background: #d87399;
+
+    transform: translateY(-2px);
+}
+
+.buy-note {
+    text-align: center;
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 13px;
+}
+
+
+/* =========================================================
+   CART
+   ========================================================= */
 
 .cart-overlay {
+    display: none;
+
     position: fixed;
+
     inset: 0;
 
-    z-index: 1999;
+    z-index: 3000;
 
-    background: rgba(0,0,0,.35);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transition: .3s;
+    background: rgba(0, 0, 0, 0.35);
 }
 
-.cart-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+.cart-drawer {
+    position: absolute;
 
-/* =========================
-   CART
-========================= */
-
-.cart {
-    position: fixed;
+    right: 0;
 
     top: 0;
-    right: -430px;
 
-    width: min(420px,94vw);
+    width: min(430px, 92%);
+
     height: 100%;
-
-    z-index: 2000;
 
     background: white;
 
@@ -437,153 +644,177 @@ header {
 
     overflow-y: auto;
 
-    box-shadow:
-        -10px 0 40px rgba(0,0,0,.12);
-
-    transition: .35s ease;
-}
-
-.cart.active {
-    right: 0;
+    animation: slideIn 0.3s ease;
 }
 
 .cart-header {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
-    padding-bottom: 18px;
-
-    margin-bottom: 20px;
-
-    border-bottom: 1px solid #eee;
+    margin-bottom: 25px;
 }
 
 .cart-header h2 {
-    color: #e98da9;
+    color: #df86a7;
 }
 
-.close-cart {
-    width: 35px;
-    height: 35px;
-
+.cart-close {
     border: none;
+
+    background: #ffe8f0;
+
+    color: #d36f93;
+
+    width: 36px;
+
+    height: 36px;
+
     border-radius: 50%;
 
-    background: #f8e3e9;
-    color: #d87996;
-
-    font-size: 18px;
-
     cursor: pointer;
+
+    font-size: 20px;
 }
 
 .cart-item {
-    display: grid;
+    border-bottom: 1px solid #f3dfe7;
 
-    grid-template-columns:
-        65px 1fr auto;
-
-    gap: 12px;
-
-    align-items: center;
-
-    padding: 12px 0;
-
-    border-bottom: 1px solid #f2f2f2;
+    padding: 15px 0;
 }
 
-.cart-item img {
-    width: 65px;
-    height: 65px;
-
-    object-fit: cover;
-
-    border-radius: 12px;
-}
-
-.cart-item-name {
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.cart-item-info {
-    color: #999;
-
-    font-size: 12px;
-
-    margin-top: 5px;
-}
-
-.remove-item {
-    border: none;
-
-    background: transparent;
-
-    color: #e788a4;
-
-    cursor: pointer;
-
-    font-size: 12px;
-
-    margin-top: 4px;
-}
-
-.cart-total {
-    margin-top: 25px;
-
-    padding: 18px;
-
-    background: #fff4f7;
-
-    border-radius: 15px;
-}
-
-.total-line {
+.cart-item-top {
     display: flex;
 
     justify-content: space-between;
 
-    margin-bottom: 9px;
+    gap: 10px;
 }
 
-.total-final {
-    padding-top: 12px;
-
-    margin-top: 12px;
-
-    border-top: 1px solid #f2dce3;
-
-    color: #e98ba7;
-
-    font-size: 21px;
-    font-weight: 900;
+.cart-item-name {
+    font-weight: bold;
 }
 
-.whatsapp-btn {
+.cart-item-details {
+    color: #888;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+.cart-item-price {
+    color: #d96f95;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.cart-controls {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-top: 10px;
+}
+
+.cart-controls button {
+    width: 28px;
+
+    height: 28px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffe8f0;
+
+    color: #d36f93;
+
+    cursor: pointer;
+}
+
+.remove-item {
+    margin-left: auto;
+
+    background: transparent !important;
+
+    color: #999 !important;
+}
+
+.cart-summary {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #f3dfe7;
+}
+
+.summary-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+}
+
+.saved {
+    color: #55a878;
+
+    font-weight: bold;
+}
+
+.total {
+    color: #d96f95;
+
+    font-size: 23px;
+
+    font-weight: bold;
+}
+
+.whatsapp-button {
     width: 100%;
 
-    margin-top: 18px;
+    margin-top: 15px;
 
     padding: 15px;
 
     border: none;
-    border-radius: 13px;
+
+    border-radius: 30px;
 
     background: #25D366;
+
     color: white;
 
-    font-size: 16px;
     font-weight: bold;
 
-    cursor: pointer;
+    font-size: 16px;
 
-    transition: .3s;
+    cursor: pointer;
 }
 
-.whatsapp-btn:hover {
-    transform: translateY(-2px);
+.clear-cart {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px;
+
+    border: 1px solid #f0c8d6;
+
+    background: white;
+
+    color: #c86b8d;
+
+    border-radius: 25px;
+
+    cursor: pointer;
 }
 
 .empty-cart {
@@ -594,57 +825,97 @@ header {
     padding: 50px 10px;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-========================= */
+   ========================================================= */
 
 footer {
-    padding: 40px 20px;
+    background: #fff0f5;
 
     text-align: center;
 
-    background: #fff0f5;
+    padding: 45px 20px;
 
-    color: #999;
+    margin-top: 30px;
 }
 
-footer strong {
-    color: #e991aa;
+.footer-logo {
+    color: #df86a7;
 
-    letter-spacing: 4px;
+    font-size: 27px;
 
-    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
 }
 
-.footer-tagline {
+footer p {
+    color: #888;
+
     margin-top: 10px;
 }
 
-.footer-copy {
-    margin-top: 14px;
 
-    font-size: 12px;
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
 
-    color: #aaa;
-}
+@keyframes fadeUp {
 
-/* =========================
-   MOBILE
-========================= */
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
 
-@media(max-width:900px) {
-
-    .products-grid {
-        grid-template-columns:
-            repeat(2,1fr);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
 
-@media(max-width:550px) {
+@keyframes slideIn {
 
-    .navbar {
-        height: 68px;
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .products-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .product-page-content {
+        gap: 35px;
+    }
+
+    .product-page-image {
+        height: 560px;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    header {
+        height: 65px;
+
+        padding: 0 5%;
     }
 
     .logo {
@@ -652,16 +923,20 @@ footer strong {
     }
 
     .hero {
-        min-height: 420px;
+        min-height: 450px;
     }
 
     .hero h1 {
-        letter-spacing: 6px;
+        font-size: 43px;
+    }
+
+    .products-section {
+        padding: 55px 5%;
     }
 
     .products-grid {
         grid-template-columns:
-            repeat(2,1fr);
+            repeat(2, 1fr);
 
         gap: 12px;
     }
@@ -671,39 +946,94 @@ footer strong {
     }
 
     .product-info {
-        padding: 13px;
+        padding: 12px;
     }
 
     .product-name {
-        font-size: 14px;
+        font-size: 15px;
+    }
+
+
+    /* FULL PRODUCT PAGE ON MOBILE */
+
+    .product-page-top {
+        padding: 17px 5%;
+    }
+
+    .product-page-content {
+        display: block;
+
+        padding: 20px 5% 60px;
+    }
+
+    .product-page-image-box {
+        border-radius: 18px;
+
+        margin-bottom: 30px;
+    }
+
+    .product-page-image {
+        height: 440px;
+    }
+
+    .product-page-details h1 {
+        font-size: 30px;
+    }
+
+    .product-sale-price {
+        font-size: 28px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .cart-button {
+        padding: 9px 13px;
+
+        font-size: 13px;
+    }
+
+    .products-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .product-image {
+        height: 175px;
     }
 
     .sale-price {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .old-price {
         font-size: 11px;
     }
 
-    .add-btn {
-        padding: 10px 5px;
-        font-size: 12px;
+    .discount-badge {
+        font-size: 9px;
     }
+
+    .product-page-image {
+        height: 390px;
+    }
+
 }
+
 </style>
 </head>
 
 
 <body>
 
-<!-- =========================
+
+<!-- =========================================================
      HEADER
-========================= -->
+     ========================================================= -->
 
 <header>
-
-<div class="navbar">
 
     <div class="logo">
         KIDORA
@@ -713,508 +1043,560 @@ footer strong {
         class="cart-button"
         onclick="openCart()"
     >
-        🛍️
-
-        <span id="cartCount">
-            0
-        </span>
-
+        🛒 Cart
+        (<span id="cartCount">0</span>)
     </button>
-
-</div>
 
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- =========================================================
+     HOME PAGE
+     ========================================================= -->
 
-<section class="hero">
+<main id="homePage">
 
-<div class="hero-content">
+    <section class="hero">
 
-    <div class="small-title">
-        Little Looks, Big Smiles
+        <div class="hero-content">
+
+            <div class="small-title">
+                KIDORA COLLECTION
+            </div>
+
+            <h1>
+                Little Looks,<br>
+                Big Smiles 💗
+            </h1>
+
+            <p>
+                Cute, comfortable & charming outfits
+                made for little girls.
+            </p>
+
+            <a
+                href="#products"
+                class="shop-button"
+            >
+                Shop Collection
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <div class="delivery-bar">
+        ✨ Free Delivery on Orders Over Rs. 5,000 ✨
     </div>
 
-    <h1>
-        KIDORA
-    </h1>
 
-    <p>
-        Cute, comfortable & charming outfits
-        for little girls.
-    </p>
-
-    <a
-        href="#products"
-        class="shop-btn"
-    >
-        Shop Collection
-    </a>
-
-</div>
-
-</section>
-
-
-<!-- =========================
-     DELIVERY
-========================= -->
-
-<div class="delivery-bar">
-
-    ✨ Free Delivery on Orders Over Rs. 5,000 ✨
-
-</div>
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section
-    class="products-section"
-    id="products"
->
-
-<div class="section-heading">
-
-    <h2>
-        Our Collection
-    </h2>
-
-    <p>
-        Sweet styles made for little moments.
-    </p>
-
-</div>
-
-
-<div
-    class="products-grid"
-    id="productsGrid"
->
-
-
-<!-- ==================================================
-     PRODUCT 1
-================================================== -->
-
-<div
-class="product-card"
-
-data-name="Pink Dress"
-data-color="Baby Pink"
-data-price="499"
-
-data-image="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=80"
->
-
-<div class="product-image">
-
-    <img
-        src="https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=700&q=80"
-        alt="Pink Dress"
+    <section
+        class="products-section"
+        id="products"
     >
 
-    <div class="discount-badge discount"></div>
+        <div class="section-title">
 
-</div>
+            <h2>
+                Our Collection
+            </h2>
 
+            <p>
+                Little outfits made with lots of love 💗
+            </p>
 
-<div class="product-info">
+        </div>
 
-    <div class="product-name">
-        Pink Dress
-    </div>
+        <div
+            class="products-grid"
+            id="productsGrid"
+        ></div>
 
-    <div class="color">
-        Color: Baby Pink
-    </div>
-
-    <div class="price-row">
-
-        <span class="old-price"></span>
-
-        <span class="sale-price">
-            Rs. 499
-        </span>
-
-        <span class="saved"></span>
-
-    </div>
-
-    <button
-        class="add-btn"
-        onclick="addToCart(this)"
-    >
-        Add to Cart
-    </button>
-
-</div>
-
-</div>
+    </section>
 
 
-<!-- ==================================================
-     PRODUCT 2
-================================================== -->
+    <footer>
 
-<div
-class="product-card"
+        <div class="footer-logo">
+            KIDORA
+        </div>
 
-data-name="Floral Party Frock"
-data-color="White & Pink"
-data-price="200"
+        <p>
+            Little styles. Big smiles. 💗
+        </p>
 
-data-image="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=700&q=80"
->
+        <p>
+            © 2026 KIDORA. All Rights Reserved.
+        </p>
 
-<div class="product-image">
+    </footer>
 
-    <img
-        src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=700&q=80"
-        alt="Floral Party Frock"
-    >
-
-    <div class="discount-badge discount"></div>
-
-</div>
+</main>
 
 
-<div class="product-info">
 
-    <div class="product-name">
-        Floral Party Frock
-    </div>
+<!-- =========================================================
+     FULL PRODUCT PAGE
+     ========================================================= -->
 
-    <div class="color">
-        Color: White & Pink
-    </div>
+<main id="productPage">
 
-    <div class="price-row">
+    <div class="product-page-top">
 
-        <span class="old-price"></span>
-
-        <span class="sale-price">
-            Rs. 200
-        </span>
-
-        <span class="saved"></span>
+        <button
+            class="back-button"
+            onclick="goBackToProducts()"
+        >
+            ← Back to Collection
+        </button>
 
     </div>
 
-    <button
-        class="add-btn"
-        onclick="addToCart(this)"
-    >
-        Add to Cart
-    </button>
 
-</div>
+    <div class="product-page-content">
 
-</div>
+        <!-- BIG IMAGE -->
 
+        <div class="product-page-image-box">
 
-<!-- ==================================================
-     PRODUCT 3
-================================================== -->
+            <img
+                id="productPageImage"
+                class="product-page-image"
+                src=""
+                alt="KIDORA Product"
+            >
 
-<div
-class="product-card"
-
-data-name="Cute Bow Outfit"
-data-color="Soft Pink"
-data-price="200"
-
-data-image="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=700&q=80"
->
-
-<div class="product-image">
-
-    <img
-        src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=700&q=80"
-        alt="Cute Bow Outfit"
-    >
-
-    <div class="discount-badge discount"></div>
-
-</div>
+        </div>
 
 
-<div class="product-info">
+        <!-- DETAILS -->
 
-    <div class="product-name">
-        Cute Bow Outfit
+        <div class="product-page-details">
+
+            <h1 id="productPageName">
+                Product Name
+            </h1>
+
+            <div
+                class="product-page-color"
+                id="productPageColor"
+            >
+                Product Color
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <p
+                class="product-description"
+                id="productPageDescription"
+            >
+            </p>
+
+
+            <!-- PRICE -->
+
+            <div class="product-price-box">
+
+                <span
+                    class="product-old-price"
+                    id="productPageOldPrice"
+                >
+                </span>
+
+                <span
+                    class="product-sale-price"
+                    id="productPageSalePrice"
+                >
+                </span>
+
+                <span
+                    class="save-text"
+                    id="productPageSaving"
+                >
+                </span>
+
+            </div>
+
+
+            <!-- DISCOUNT -->
+
+            <div
+                class="discount-badge"
+                id="productPageDiscount"
+            >
+            </div>
+
+
+            <br><br>
+
+
+            <!-- SIZE -->
+
+            <div class="option-title">
+                Select Size
+            </div>
+
+            <div class="size-options">
+
+                <button
+                    class="size-button active"
+                    id="size1Button"
+                    onclick="selectSize(1)"
+                >
+                    1Y Baby Dress
+                </button>
+
+                <button
+                    class="size-button"
+                    id="size2Button"
+                    onclick="selectSize(2)"
+                >
+                    2Y Baby Dress
+                </button>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="quantity-section">
+
+                <div class="option-title">
+                    Quantity
+                </div>
+
+                <div class="quantity-box">
+
+                    <button
+                        onclick="changeProductQuantity(-1)"
+                    >
+                        −
+                    </button>
+
+                    <span
+                        class="quantity-number"
+                        id="productQuantity"
+                    >
+                        1
+                    </span>
+
+                    <button
+                        onclick="changeProductQuantity(1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADD TO CART -->
+
+            <button
+                class="add-cart-button"
+                onclick="addProductToCart()"
+            >
+                Add to Cart 🛒
+            </button>
+
+            <div class="buy-note">
+                Secure your order through WhatsApp 💗
+            </div>
+
+        </div>
+
     </div>
 
-    <div class="color">
-        Color: Soft Pink
-    </div>
 
-    <div class="price-row">
+    <footer>
 
-        <span class="old-price"></span>
+        <div class="footer-logo">
+            KIDORA
+        </div>
 
-        <span class="sale-price">
-            Rs. 200
-        </span>
+        <p>
+            Little styles. Big smiles. 💗
+        </p>
 
-        <span class="saved"></span>
+        <p>
+            © 2026 KIDORA. All Rights Reserved.
+        </p>
 
-    </div>
+    </footer>
 
-    <button
-        class="add-btn"
-        onclick="addToCart(this)"
-    >
-        Add to Cart
-    </button>
-
-</div>
-
-</div>
+</main>
 
 
-<!-- ==================================================
-     PRODUCT 4
-================================================== -->
 
-<div
-class="product-card"
-
-data-name="Little Angel Dress"
-data-color="Cream Pink"
-data-price="200"
-
-data-image="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=80"
->
-
-<div class="product-image">
-
-    <img
-        src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=700&q=80"
-        alt="Little Angel Dress"
-    >
-
-    <div class="discount-badge discount"></div>
-
-</div>
-
-
-<div class="product-info">
-
-    <div class="product-name">
-        Little Angel Dress
-    </div>
-
-    <div class="color">
-        Color: Cream Pink
-    </div>
-
-    <div class="price-row">
-
-        <span class="old-price"></span>
-
-        <span class="sale-price">
-            Rs. 200
-        </span>
-
-        <span class="saved"></span>
-
-    </div>
-
-    <button
-        class="add-btn"
-        onclick="addToCart(this)"
-    >
-        Add to Cart
-    </button>
-
-</div>
-
-</div>
-
-
-</div>
-</section>
-
-
-<!-- =========================
-     CART BACKDROP
-========================= -->
-
-<div
-class="cart-overlay"
-id="cartOverlay"
-onclick="closeCart()"
-></div>
-
-
-<!-- =========================
+<!-- =========================================================
      CART
-========================= -->
+     ========================================================= -->
 
 <div
-class="cart"
-id="cart"
+    class="cart-overlay"
+    id="cartOverlay"
 >
 
-<div class="cart-header">
+    <div class="cart-drawer">
 
-    <h2>
-        Your Cart
-    </h2>
+        <div class="cart-header">
 
-    <button
-        class="close-cart"
-        onclick="closeCart()"
-    >
-        ×
-    </button>
+            <h2>
+                Your Cart
+            </h2>
 
-</div>
+            <button
+                class="cart-close"
+                onclick="closeCart()"
+            >
+                ×
+            </button>
+
+        </div>
 
 
-<div id="cartItems">
+        <div id="cartItems"></div>
 
-    <div class="empty-cart">
-        Your cart is empty 🛍️
+
+        <div class="cart-summary">
+
+            <div class="summary-row">
+
+                <span>
+                    Items
+                </span>
+
+                <span id="summaryItems">
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    You Save
+                </span>
+
+                <span
+                    class="saved"
+                    id="summarySaved"
+                >
+                    Rs. 0
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Total
+                </span>
+
+                <span
+                    class="total"
+                    id="summaryTotal"
+                >
+                    Rs. 0
+                </span>
+
+            </div>
+
+
+            <button
+                class="whatsapp-button"
+                onclick="orderOnWhatsApp()"
+            >
+                Order on WhatsApp 💬
+            </button>
+
+
+            <button
+                class="clear-cart"
+                onclick="clearCart()"
+            >
+                Clear Cart
+            </button>
+
+        </div>
+
     </div>
 
 </div>
 
-
-<div
-id="cartSummary"
-style="display:none;"
->
-
-<div class="cart-total">
-
-    <div class="total-line">
-
-        <span>
-            Items
-        </span>
-
-        <span id="itemsTotal">
-            Rs. 0
-        </span>
-
-    </div>
-
-
-    <div class="total-line">
-
-        <span>
-            You Save
-        </span>
-
-        <span id="savedTotal">
-            Rs. 0
-        </span>
-
-    </div>
-
-
-    <div class="total-line total-final">
-
-        <span>
-            Total
-        </span>
-
-        <span id="grandTotal">
-            Rs. 0
-        </span>
-
-    </div>
-
-</div>
-
-
-<button
-class="whatsapp-btn"
-onclick="orderOnWhatsApp()"
->
-    💬 Order on WhatsApp
-</button>
-
-</div>
-
-</div>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-<strong>
-    KIDORA
-</strong>
-
-<div class="footer-tagline">
-    Little styles. Big smiles. 💗
-</div>
-
-<div class="footer-copy">
-    © 2026 KIDORA. All Rights Reserved.
-</div>
-
-</footer>
 
 
 <script>
 
-/* =====================================================
-   KIDORA WHATSAPP
-===================================================== */
-
-/*
-   Your Pakistani number:
-
-   03469030193
-
-   International WhatsApp format:
-
-   +923469030193
-
-   IMPORTANT:
-   We remove the + from the URL number.
-*/
-
-const whatsappNumber = "923469030193";
+/* =========================================================
+   KIDORA JAVASCRIPT
+   ========================================================= */
 
 
-/* =====================================================
-   CART
-===================================================== */
+/* =========================================================
+   PRODUCTS
 
-let cart = [];
+   ⭐ ONLY EDIT THIS AREA TO CHANGE PRODUCTS ⭐
+
+   You can change:
+
+   name
+   color
+   description
+   image
+   price1Y
+   price2Y
+
+   Example:
+
+   price1Y: 700,
+   price2Y: 800
+
+   means:
+
+   1Y = Rs. 700
+   2Y = Rs. 800
+   ========================================================= */
+
+const PRODUCTS = [
+
+    {
+        id: 1,
+
+        name: "Pink Princess Frock",
+
+        color: "Baby Pink",
+
+        description:
+            "A beautiful and comfortable little princess frock, perfect for birthdays, family events and special days.",
+
+        image:
+            "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=1200&q=85",
+
+        price1Y: 500,
+
+        price2Y: 550
+    },
 
 
-/* =====================================================
-   DAILY OFFER SYSTEM
-===================================================== */
+    {
+        id: 2,
 
-/*
-   IMPORTANT:
+        name: "Floral Party Frock",
 
-   The offer system uses Pakistan time.
+        color: "White & Pink",
 
-   Offers are stored for each day in localStorage.
+        description:
+            "A sweet floral-inspired party frock designed for cute everyday moments and beautiful celebrations.",
 
-   Therefore:
+        image:
+            "https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?auto=format&fit=crop&w=1200&q=85",
 
-   - Refreshing the page does NOT change offers.
-   - Closing/reopening website does NOT change offers.
-   - Offers change when the Pakistan date changes.
-*/
+        price1Y: 650,
 
+        price2Y: 700
+    },
+
+
+    {
+        id: 3,
+
+        name: "Cute Bow Dress",
+
+        color: "Soft Pink",
+
+        description:
+            "A charming bow-detail dress with a soft and lovely look, perfect for little fashion lovers.",
+
+        image:
+            "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=1200&q=85",
+
+        price1Y: 750,
+
+        price2Y: 800
+    },
+
+
+    {
+        id: 4,
+
+        name: "Little Angel Dress",
+
+        color: "Cream Pink",
+
+        description:
+            "A delicate little dress with an elegant look for family gatherings, celebrations and special memories.",
+
+        image:
+            "https://images.unsplash.com/photo-1542060748-10c28b62716b?auto=format&fit=crop&w=1200&q=85",
+
+        price1Y: 850,
+
+        price2Y: 900
+    },
+
+
+    {
+        id: 5,
+
+        name: "Princess Party Outfit",
+
+        color: "Blush Pink",
+
+        description:
+            "A pretty party outfit created for little girls who love a cute and elegant style.",
+
+        image:
+            "https://images.unsplash.com/photo-1520975958225-cc8f9e8e6b7b?auto=format&fit=crop&w=1200&q=85",
+
+        price1Y: 950,
+
+        price2Y: 1000
+    }
+
+];
+
+
+
+/* =========================================================
+   WHATSAPP NUMBER
+   ========================================================= */
+
+const WHATSAPP_NUMBER =
+    "923469030193";
+
+
+
+/* =========================================================
+   DAILY DISCOUNT SYSTEM
+   =========================================================
+
+   5%:
+   At least one product every day.
+
+   10%:
+   If yesterday had 10%:
+       60% continue
+       40% disappear
+
+   15%:
+   If yesterday had 15%:
+       60% continue
+       40% disappear
+
+   New 10% / 15%:
+       50% chance to appear
+
+   The same day's offers are stored in localStorage.
+   ========================================================= */
+
+
+/* Pakistan date */
 
 function getPakistanDate() {
 
@@ -1222,134 +1604,121 @@ function getPakistanDate() {
         "en-CA",
         {
             timeZone: "Asia/Karachi",
+
             year: "numeric",
+
             month: "2-digit",
+
             day: "2-digit"
         }
-    ).format(
-        new Date()
-    );
+    ).format(new Date());
 
 }
 
 
-/* =====================================================
-   RANDOM NUMBER
-===================================================== */
+/* Random chance */
 
-function randomNumber() {
+function randomChance() {
 
     return Math.random();
 
 }
 
 
-/* =====================================================
-   CREATE TODAY'S OFFERS
-===================================================== */
+/* Create today's offers */
 
-function createDailyOffers() {
+function createDailyDiscounts() {
 
     const today =
         getPakistanDate();
 
 
-    const oldData =
+    const saved =
         JSON.parse(
             localStorage.getItem(
                 "kidoraOffers"
-            ) || "null"
+            )
         );
 
 
-    /*
-       If today's offers already exist,
-       keep them exactly the same.
-    */
+    /* If today's offers already exist,
+       use the same offers. */
 
     if (
-        oldData &&
-        oldData.date === today
+        saved &&
+        saved.date === today
     ) {
 
-        return oldData.offers;
+        return saved.discounts;
 
     }
 
 
-    const productCount =
-        document.querySelectorAll(
-            ".product-card"
-        ).length;
+    const previousDiscounts =
+        saved
+        ?
+        saved.discounts
+        :
+        [];
 
 
-    let offers =
-        new Array(productCount).fill(0);
+    let discounts =
+        new Array(
+            PRODUCTS.length
+        ).fill(0);
 
 
-    /*
-       ------------------------------
-       5% OFF
-       ------------------------------
-
-       5% MUST appear every day.
-
-       Pick one random product.
-    */
+    /* =====================================================
+       5% IS ALWAYS PRESENT
+       ===================================================== */
 
     const fiveIndex =
         Math.floor(
-            randomNumber() * productCount
+            Math.random() *
+            PRODUCTS.length
         );
 
-    offers[fiveIndex] = 5;
+
+    discounts[fiveIndex] = 5;
 
 
-    /*
-       ------------------------------
-       10% OFF
-       ------------------------------
 
-       If yesterday had 10%:
+    /* =====================================================
+       10%
+       ===================================================== */
 
-       60% = continue
-       40% = disappear
+    const had10 =
+        previousDiscounts.includes(10);
 
-       If yesterday didn't have it:
+    let use10 = false;
 
-       50% chance to introduce it.
-    */
 
-    let tenActive = false;
+    if (had10) {
 
-    if (
-        oldData &&
-        oldData.offers.includes(10)
-    ) {
-
-        tenActive =
-            randomNumber() < 0.60;
+        use10 =
+            randomChance() < 0.60;
 
     } else {
 
-        tenActive =
-            randomNumber() < 0.50;
+        use10 =
+            randomChance() < 0.50;
 
     }
 
 
-    if (tenActive) {
+    if (use10) {
 
         let available = [];
 
+
         for (
             let i = 0;
-            i < productCount;
+            i < PRODUCTS.length;
             i++
         ) {
 
             if (
-                offers[i] === 0
+                discounts[i] === 0
             ) {
 
                 available.push(i);
@@ -1364,63 +1733,56 @@ function createDailyOffers() {
             const index =
                 available[
                     Math.floor(
-                        randomNumber()
-                        * available.length
+                        Math.random() *
+                        available.length
                     )
                 ];
 
-            offers[index] = 10;
+
+            discounts[index] = 10;
 
         }
 
     }
 
 
-    /*
-       ------------------------------
-       15% OFF
-       ------------------------------
 
-       If yesterday had 15%:
+    /* =====================================================
+       15%
+       ===================================================== */
 
-       60% = continue
-       40% = disappear
+    const had15 =
+        previousDiscounts.includes(15);
 
-       If yesterday didn't have it:
+    let use15 = false;
 
-       50% chance to introduce it.
-    */
 
-    let fifteenActive = false;
+    if (had15) {
 
-    if (
-        oldData &&
-        oldData.offers.includes(15)
-    ) {
-
-        fifteenActive =
-            randomNumber() < 0.60;
+        use15 =
+            randomChance() < 0.60;
 
     } else {
 
-        fifteenActive =
-            randomNumber() < 0.50;
+        use15 =
+            randomChance() < 0.50;
 
     }
 
 
-    if (fifteenActive) {
+    if (use15) {
 
         let available = [];
 
+
         for (
             let i = 0;
-            i < productCount;
+            i < PRODUCTS.length;
             i++
         ) {
 
             if (
-                offers[i] === 0
+                discounts[i] === 0
             ) {
 
                 available.push(i);
@@ -1435,21 +1797,21 @@ function createDailyOffers() {
             const index =
                 available[
                     Math.floor(
-                        randomNumber()
-                        * available.length
+                        Math.random() *
+                        available.length
                     )
                 ];
 
-            offers[index] = 15;
+
+            discounts[index] = 15;
 
         }
 
     }
 
 
-    /*
-       Save today's offers.
-    */
+
+    /* Save today's offers */
 
     localStorage.setItem(
 
@@ -1459,120 +1821,199 @@ function createDailyOffers() {
 
             date: today,
 
-            offers: offers
+            discounts: discounts
 
         })
 
     );
 
 
-    return offers;
+    return discounts;
 
 }
 
 
-/* =====================================================
-   APPLY OFFERS TO PRODUCTS
-===================================================== */
+/* Start discount system */
 
-function applyDailyOffers() {
+let DAILY_DISCOUNTS =
+    createDailyDiscounts();
 
-    const products =
-        document.querySelectorAll(
-            ".product-card"
+
+
+/* =========================================================
+   PRICE FUNCTIONS
+   ========================================================= */
+
+
+/* Calculate sale price */
+
+function getSalePrice(
+    price,
+    discount
+) {
+
+    return Math.round(
+        price *
+        (1 - discount / 100)
+    );
+
+}
+
+
+/* Calculate crossed-out price */
+
+function getOriginalPrice(
+    salePrice,
+    discount
+) {
+
+    if (discount === 0) {
+
+        return salePrice;
+
+    }
+
+
+    return Math.round(
+        salePrice /
+        (1 - discount / 100)
+    );
+
+}
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+let selectedProduct = null;
+
+let selectedSize = 1;
+
+let productQuantity = 1;
+
+let cart = [];
+
+
+
+/* =========================================================
+   DISPLAY PRODUCTS
+   ========================================================= */
+
+function displayProducts() {
+
+    const grid =
+        document.getElementById(
+            "productsGrid"
         );
 
 
-    const offers =
-        createDailyOffers();
+    grid.innerHTML = "";
 
 
-    products.forEach(
-        (product, index) => {
-
-            const finalPrice =
-                Number(
-                    product.dataset.price
-                );
+    PRODUCTS.forEach(
+        function(product, index) {
 
 
             const discount =
-                offers[index] || 0;
+                DAILY_DISCOUNTS[index];
+
+
+            const price =
+                product.price1Y;
+
+
+            const salePrice =
+                getSalePrice(
+                    price,
+                    discount
+                );
 
 
             const originalPrice =
-                discount > 0
-
-                ? finalPrice /
-                  (1 - discount / 100)
-
-                : finalPrice;
-
-
-            const oldPriceElement =
-                product.querySelector(
-                    ".old-price"
+                getOriginalPrice(
+                    salePrice,
+                    discount
                 );
 
 
-            const salePriceElement =
-                product.querySelector(
-                    ".sale-price"
+            const card =
+                document.createElement(
+                    "div"
                 );
 
 
-            const discountElement =
-                product.querySelector(
-                    ".discount"
-                );
+            card.className =
+                "product-card";
 
 
-            const savedElement =
-                product.querySelector(
-                    ".saved"
-                );
+            /* Clicking card opens full page */
+
+            card.onclick =
+                function() {
+
+                    openProduct(
+                        product.id
+                    );
+
+                };
 
 
-            salePriceElement.textContent =
-                "Rs. " +
-                finalPrice.toFixed(0);
+            card.innerHTML = `
+
+                <img
+                    class="product-image"
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="product-color">
+                        ${product.color}
+                    </div>
+
+                    <div class="price-row">
+
+                        ${
+                            discount > 0
+                            ?
+                            `
+                            <span class="old-price">
+                                Rs. ${originalPrice}
+                            </span>
+                            `
+                            :
+                            ""
+                        }
+
+                        <span class="sale-price">
+                            Rs. ${salePrice}
+                        </span>
+
+                    </div>
+
+                    ${
+                        discount > 0
+                        ?
+                        `
+                        <div class="discount-badge">
+                            ${discount}% OFF
+                        </div>
+                        `
+                        :
+                        ""
+                    }
+
+                </div>
+            `;
 
 
-            if (discount > 0) {
-
-                oldPriceElement.textContent =
-                    "Rs. " +
-                    originalPrice.toFixed(0);
-
-
-                discountElement.textContent =
-                    discount +
-                    "% OFF";
-
-
-                savedElement.textContent =
-                    "Save Rs. " +
-                    (
-                        originalPrice -
-                        finalPrice
-                    ).toFixed(0);
-
-            }
-
-            else {
-
-                oldPriceElement.textContent =
-                    "";
-
-
-                discountElement.textContent =
-                    "";
-
-
-                savedElement.textContent =
-                    "";
-
-            }
+            grid.appendChild(card);
 
         }
     );
@@ -1580,120 +2021,393 @@ function applyDailyOffers() {
 }
 
 
-/* =====================================================
-   GET PRODUCT DISCOUNT
-===================================================== */
 
-function getProductDiscount(product) {
+/* =========================================================
+   OPEN FULL PRODUCT PAGE
+   ========================================================= */
 
-    const products =
-        [...document.querySelectorAll(
-            ".product-card"
-        )];
+function openProduct(productId) {
 
+    selectedProduct =
+        PRODUCTS.find(
+            function(product) {
 
-    const index =
-        products.indexOf(product);
+                return product.id === productId;
 
-
-    const offers =
-        createDailyOffers();
-
-
-    return offers[index] || 0;
-
-}
-
-
-/* =====================================================
-   ADD TO CART
-===================================================== */
-
-function addToCart(button) {
-
-    const product =
-        button.closest(
-            ".product-card"
+            }
         );
 
 
-    const name =
-        product.dataset.name;
+    if (!selectedProduct) {
+
+        return;
+
+    }
 
 
-    const color =
-        product.dataset.color;
+    selectedSize = 1;
+
+    productQuantity = 1;
 
 
-    const price =
-        Number(
-            product.dataset.price
-        );
+    updateProductPage();
 
 
-    const image =
-        product.dataset.image;
+    /* Hide home */
+
+    document.getElementById(
+        "homePage"
+    ).style.display = "none";
 
 
-    const discount =
-        getProductDiscount(
-            product
-        );
+    /* Show product page */
+
+    document.getElementById(
+        "productPage"
+    ).style.display = "block";
 
 
-    const originalPrice =
-        discount > 0
+    /* Put product in browser history */
 
-        ? price /
-          (1 - discount / 100)
-
-        : price;
-
-
-    cart.push({
-
-        name: name,
-
-        color: color,
-
-        price: price,
-
-        originalPrice:
-            originalPrice,
-
-        discount: discount,
-
-        saved:
-            originalPrice - price,
-
-        image: image
-
-    });
-
-
-    updateCart();
-
-
-    button.textContent =
-        "✓ Added";
-
-
-    setTimeout(
-        () => {
-
-            button.textContent =
-                "Add to Cart";
-
+    history.pushState(
+        {
+            productId: productId
         },
-        900
+        "",
+        "#product-" + productId
+    );
+
+
+    window.scrollTo(
+        0,
+        0
     );
 
 }
 
 
-/* =====================================================
-   UPDATE CART
-===================================================== */
+/* =========================================================
+   UPDATE PRODUCT PAGE
+   ========================================================= */
+
+function updateProductPage() {
+
+    if (!selectedProduct) {
+
+        return;
+
+    }
+
+
+    const index =
+        PRODUCTS.findIndex(
+            function(product) {
+
+                return product.id ===
+                    selectedProduct.id;
+
+            }
+        );
+
+
+    const discount =
+        DAILY_DISCOUNTS[index];
+
+
+    const basePrice =
+        selectedSize === 1
+        ?
+        selectedProduct.price1Y
+        :
+        selectedProduct.price2Y;
+
+
+    const salePrice =
+        getSalePrice(
+            basePrice,
+            discount
+        );
+
+
+    const originalPrice =
+        getOriginalPrice(
+            salePrice,
+            discount
+        );
+
+
+    const saving =
+        originalPrice -
+        salePrice;
+
+
+    document.getElementById(
+        "productPageImage"
+    ).src =
+        selectedProduct.image;
+
+
+    document.getElementById(
+        "productPageImage"
+    ).alt =
+        selectedProduct.name;
+
+
+    document.getElementById(
+        "productPageName"
+    ).textContent =
+        selectedProduct.name;
+
+
+    document.getElementById(
+        "productPageColor"
+    ).textContent =
+        selectedProduct.color;
+
+
+    document.getElementById(
+        "productPageDescription"
+    ).textContent =
+        selectedProduct.description;
+
+
+    document.getElementById(
+        "productPageSalePrice"
+    ).textContent =
+        "Rs. " + salePrice;
+
+
+    document.getElementById(
+        "productPageOldPrice"
+    ).textContent =
+        discount > 0
+        ?
+        "Rs. " + originalPrice
+        :
+        "";
+
+
+    document.getElementById(
+        "productPageSaving"
+    ).textContent =
+        discount > 0
+        ?
+        "You save Rs. " + saving
+        :
+        "";
+
+
+    document.getElementById(
+        "productPageDiscount"
+    ).textContent =
+        discount > 0
+        ?
+        discount + "% OFF"
+        :
+        "Regular Price";
+
+
+    document.getElementById(
+        "productQuantity"
+    ).textContent =
+        productQuantity;
+
+
+    document.getElementById(
+        "size1Button"
+    ).classList.toggle(
+        "active",
+        selectedSize === 1
+    );
+
+
+    document.getElementById(
+        "size2Button"
+    ).classList.toggle(
+        "active",
+        selectedSize === 2
+    );
+
+}
+
+
+
+/* =========================================================
+   SELECT SIZE
+   ========================================================= */
+
+function selectSize(size) {
+
+    selectedSize = size;
+
+
+    updateProductPage();
+
+}
+
+
+
+/* =========================================================
+   CHANGE PRODUCT QUANTITY
+   ========================================================= */
+
+function changeProductQuantity(
+    amount
+) {
+
+    productQuantity += amount;
+
+
+    if (productQuantity < 1) {
+
+        productQuantity = 1;
+
+    }
+
+
+    if (productQuantity > 20) {
+
+        productQuantity = 20;
+
+    }
+
+
+    document.getElementById(
+        "productQuantity"
+    ).textContent =
+        productQuantity;
+
+}
+
+
+
+/* =========================================================
+   ADD PRODUCT TO CART
+   ========================================================= */
+
+function addProductToCart() {
+
+    if (!selectedProduct) {
+
+        return;
+
+    }
+
+
+    const index =
+        PRODUCTS.findIndex(
+            function(product) {
+
+                return product.id ===
+                    selectedProduct.id;
+
+            }
+        );
+
+
+    const discount =
+        DAILY_DISCOUNTS[index];
+
+
+    const basePrice =
+        selectedSize === 1
+        ?
+        selectedProduct.price1Y
+        :
+        selectedProduct.price2Y;
+
+
+    const salePrice =
+        getSalePrice(
+            basePrice,
+            discount
+        );
+
+
+    const sizeName =
+        selectedSize === 1
+        ?
+        "1Y Baby Dress"
+        :
+        "2Y Baby Dress";
+
+
+    const cartId =
+        selectedProduct.id +
+        "-" +
+        selectedSize;
+
+
+    const existing =
+        cart.find(
+            function(item) {
+
+                return item.cartId ===
+                    cartId;
+
+            }
+        );
+
+
+    if (existing) {
+
+        existing.quantity +=
+            productQuantity;
+
+    } else {
+
+        cart.push({
+
+            cartId: cartId,
+
+            productId:
+                selectedProduct.id,
+
+            name:
+                selectedProduct.name,
+
+            color:
+                selectedProduct.color,
+
+            size:
+                sizeName,
+
+            quantity:
+                productQuantity,
+
+            basePrice:
+                basePrice,
+
+            salePrice:
+                salePrice,
+
+            discount:
+                discount
+
+        });
+
+    }
+
+
+    updateCart();
+
+
+    /* Reset quantity */
+
+    productQuantity = 1;
+
+
+    /* Open cart */
+
+    openCart();
+
+}
+
+
+
+/* =========================================================
+   CART
+   ========================================================= */
 
 function updateCart() {
 
@@ -1703,128 +2417,116 @@ function updateCart() {
         );
 
 
-    const cartSummary =
-        document.getElementById(
-            "cartSummary"
-        );
+    cartItems.innerHTML = "";
 
 
-    const cartCount =
-        document.getElementById(
-            "cartCount"
-        );
-
-
-    cartCount.textContent =
-        cart.length;
-
-
-    if (
-        cart.length === 0
-    ) {
+    if (cart.length === 0) {
 
         cartItems.innerHTML = `
-
             <div class="empty-cart">
-                Your cart is empty 🛍️
+                Your cart is empty 💗
             </div>
-
         `;
-
-
-        cartSummary.style.display =
-            "none";
-
-
-        return;
 
     }
 
 
-    cartSummary.style.display =
-        "block";
+    let totalItems = 0;
 
+    let totalPrice = 0;
 
-    cartItems.innerHTML =
-        "";
-
-
-    let total = 0;
-
-    let saved = 0;
+    let totalSaved = 0;
 
 
     cart.forEach(
-        (item, index) => {
-
-            total +=
-                item.price;
+        function(item, index) {
 
 
-            saved +=
-                item.saved;
+            totalItems +=
+                item.quantity;
 
 
-            const div =
+            totalPrice +=
+                item.salePrice *
+                item.quantity;
+
+
+            totalSaved +=
+                (
+                    item.basePrice -
+                    item.salePrice
+                ) *
+                item.quantity;
+
+
+            const cartItem =
                 document.createElement(
                     "div"
                 );
 
 
-            div.className =
+            cartItem.className =
                 "cart-item";
 
 
-            div.innerHTML = `
+            cartItem.innerHTML = `
 
-                <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                >
+                <div class="cart-item-top">
 
-                <div>
+                    <div>
 
-                    <div class="cart-item-name">
-                        ${item.name}
+                        <div class="cart-item-name">
+                            ${item.name}
+                        </div>
+
+                        <div class="cart-item-details">
+                            ${item.color}
+                            •
+                            ${item.size}
+                        </div>
+
                     </div>
 
-                    <div class="cart-item-info">
-                        Color: ${item.color}
+                    <div class="cart-item-price">
+                        Rs.
+                        ${item.salePrice * item.quantity}
                     </div>
 
-                    <div class="cart-item-info">
-                        Original:
-                        Rs. ${item.originalPrice.toFixed(0)}
-                    </div>
+                </div>
 
-                    <div class="cart-item-info">
-                        Discount:
-                        ${item.discount}%
-                    </div>
 
-                    <div class="cart-item-info">
-                        Price:
-                        Rs. ${item.price.toFixed(0)}
-                    </div>
+                <div class="cart-controls">
+
+                    <button
+                        onclick="changeCartQuantity(${index}, -1)"
+                    >
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        onclick="changeCartQuantity(${index}, 1)"
+                    >
+                        +
+                    </button>
 
                     <button
                         class="remove-item"
-                        onclick="removeItem(${index})"
+                        onclick="removeCartItem(${index})"
                     >
                         Remove
                     </button>
 
                 </div>
 
-                <strong>
-                    Rs. ${item.price.toFixed(0)}
-                </strong>
-
             `;
 
 
             cartItems.appendChild(
-                div
+                cartItem
             );
 
         }
@@ -1832,33 +2534,68 @@ function updateCart() {
 
 
     document.getElementById(
-        "itemsTotal"
+        "cartCount"
     ).textContent =
-        "Rs. " +
-        total.toFixed(0);
+        totalItems;
 
 
     document.getElementById(
-        "savedTotal"
+        "summaryItems"
     ).textContent =
-        "Rs. " +
-        saved.toFixed(0);
+        totalItems;
 
 
     document.getElementById(
-        "grandTotal"
+        "summarySaved"
     ).textContent =
-        "Rs. " +
-        total.toFixed(0);
+        "Rs. " + totalSaved;
+
+
+    document.getElementById(
+        "summaryTotal"
+    ).textContent =
+        "Rs. " + totalPrice;
 
 }
 
 
-/* =====================================================
-   REMOVE ITEM
-===================================================== */
 
-function removeItem(index) {
+/* =========================================================
+   CHANGE CART QUANTITY
+   ========================================================= */
+
+function changeCartQuantity(
+    index,
+    amount
+) {
+
+    cart[index].quantity +=
+        amount;
+
+
+    if (
+        cart[index].quantity <= 0
+    ) {
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    updateCart();
+
+}
+
+
+
+/* =========================================================
+   REMOVE CART ITEM
+   ========================================================= */
+
+function removeCartItem(index) {
 
     cart.splice(
         index,
@@ -1871,51 +2608,135 @@ function removeItem(index) {
 }
 
 
-/* =====================================================
+
+/* =========================================================
+   CLEAR CART
+   ========================================================= */
+
+function clearCart() {
+
+    cart = [];
+
+    updateCart();
+
+}
+
+
+
+/* =========================================================
    OPEN CART
-===================================================== */
+   ========================================================= */
 
 function openCart() {
 
-    document
-        .getElementById("cart")
-        .classList.add("active");
+    updateCart();
 
 
-    document
-        .getElementById("cartOverlay")
-        .classList.add("active");
+    document.getElementById(
+        "cartOverlay"
+    ).style.display =
+        "block";
+
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
 
-/* =====================================================
+
+/* =========================================================
    CLOSE CART
-===================================================== */
+   ========================================================= */
 
 function closeCart() {
 
-    document
-        .getElementById("cart")
-        .classList.remove("active");
+    document.getElementById(
+        "cartOverlay"
+    ).style.display =
+        "none";
 
 
-    document
-        .getElementById("cartOverlay")
-        .classList.remove("active");
+    document.body.style.overflow =
+        "auto";
 
 }
 
 
-/* =====================================================
+
+/* =========================================================
+   BACK TO COLLECTION
+   ========================================================= */
+
+function goBackToProducts() {
+
+    /*
+       history.back() means the browser goes back
+       to the collection state.
+    */
+
+    history.back();
+
+}
+
+
+
+/* =========================================================
+   HANDLE BROWSER BACK BUTTON
+   ========================================================= */
+
+window.addEventListener(
+    "popstate",
+    function() {
+
+        showHomePage();
+
+    }
+);
+
+
+
+/* =========================================================
+   SHOW HOME PAGE
+   ========================================================= */
+
+function showHomePage() {
+
+    document.getElementById(
+        "productPage"
+    ).style.display =
+        "none";
+
+
+    document.getElementById(
+        "homePage"
+    ).style.display =
+        "block";
+
+
+    selectedProduct = null;
+
+
+    document.body.style.overflow =
+        "auto";
+
+
+    window.scrollTo(
+        0,
+        0
+    );
+
+}
+
+
+
+/* =========================================================
    WHATSAPP ORDER
-===================================================== */
+   ========================================================= */
 
 function orderOnWhatsApp() {
 
-    if (
-        cart.length === 0
-    ) {
+    if (cart.length === 0) {
 
         alert(
             "Your cart is empty."
@@ -1926,38 +2747,52 @@ function orderOnWhatsApp() {
     }
 
 
-    /*
-       Build the COMPLETE order.
-    */
-
     let message =
-        "Hi KIDORA! 👋\n\n" +
-
-        "I want to place an order.\n\n" +
-
-        "ORDER DETAILS\n" +
-
-        "━━━━━━━━━━━━━━━━\n";
+        "Hi KIDORA! 👋\n\n";
 
 
-    let total = 0;
+    message +=
+        "I want to place an order. 💗\n\n";
+
+
+    let totalItems = 0;
+
+    let totalPrice = 0;
 
     let totalSaved = 0;
 
 
     cart.forEach(
-        (item, index) => {
+        function(item, index) {
 
-            total +=
-                item.price;
+
+            const itemTotal =
+                item.salePrice *
+                item.quantity;
+
+
+            const itemSaved =
+                (
+                    item.basePrice -
+                    item.salePrice
+                ) *
+                item.quantity;
+
+
+            totalItems +=
+                item.quantity;
+
+
+            totalPrice +=
+                itemTotal;
 
 
             totalSaved +=
-                item.saved;
+                itemSaved;
 
 
             message +=
-                `\n${index + 1}. ${item.name}\n`;
+                `${index + 1}. ${item.name}\n`;
 
 
             message +=
@@ -1965,68 +2800,60 @@ function orderOnWhatsApp() {
 
 
             message +=
-                `Original Price: Rs. ${item.originalPrice.toFixed(0)}\n`;
+                `Size: ${item.size}\n`;
 
 
             message +=
-                `Discount: ${item.discount}% OFF\n`;
+                `Quantity: ${item.quantity}\n`;
 
 
             message +=
-                `Sale Price: Rs. ${item.price.toFixed(0)}\n`;
+                `Original Price: Rs. ${item.basePrice}\n`;
 
 
             message +=
-                `Saved: Rs. ${item.saved.toFixed(0)}\n`;
+                `Discount: ${item.discount}%\n`;
+
+
+            message +=
+                `Sale Price: Rs. ${item.salePrice}\n`;
+
+
+            message +=
+                `Saved: Rs. ${itemSaved}\n\n`;
 
         }
     );
 
 
     message +=
-        "\n━━━━━━━━━━━━━━━━\n";
+        "--------------------\n";
 
 
     message +=
-        `TOTAL: Rs. ${total.toFixed(0)}\n`;
+        `Total Items: ${totalItems}\n`;
 
 
     message +=
-        `TOTAL SAVED: Rs. ${totalSaved.toFixed(0)}\n`;
+        `Total Saved: Rs. ${totalSaved}\n`;
 
 
     message +=
-        `ITEMS: ${cart.length}\n`;
+        `Total: Rs. ${totalPrice}\n\n`;
 
 
     message +=
-        "\nPlease confirm my order. 💗";
+        "Please confirm my order. Thank you! 💗";
 
-
-    /*
-       IMPORTANT:
-
-       encodeURIComponent makes sure:
-       - spaces work
-       - line breaks work
-       - & works
-       - product names work
-       - emojis work
-       - prices work
-    */
 
     const whatsappURL =
         "https://wa.me/" +
-        whatsappNumber +
+        WHATSAPP_NUMBER +
         "?text=" +
         encodeURIComponent(
             message
         );
 
-
-    /*
-       Open WhatsApp.
-    */
 
     window.open(
         whatsappURL,
@@ -2036,11 +2863,37 @@ function orderOnWhatsApp() {
 }
 
 
-/* =====================================================
-   START
-===================================================== */
 
-applyDailyOffers();
+/* =========================================================
+   CART OUTSIDE CLICK
+   ========================================================= */
+
+document.getElementById(
+    "cartOverlay"
+).addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === this
+        ) {
+
+            closeCart();
+
+        }
+
+    }
+);
+
+
+
+/* =========================================================
+   START WEBSITE
+   ========================================================= */
+
+displayProducts();
+
+updateCart();
 
 </script>
 

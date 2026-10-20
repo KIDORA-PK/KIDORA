@@ -1425,9 +1425,20 @@ function getDiscount(product) {
 
 function getSalePrice(basePrice, discount) {
 
+    // Keep the actual selling price unchanged.
+    return basePrice;
+
+}
+
+
+/* Create a higher crossed-out price for the displayed discount */
+
+function getOriginalPrice(basePrice, discount) {
+
+    if (!discount) return basePrice;
+
     return Math.round(
-        basePrice *
-        (1 - discount / 100)
+        basePrice / (1 - discount / 100)
     );
 
 }
@@ -1439,11 +1450,8 @@ function getSalePrice(basePrice, discount) {
 
 function getSaving(basePrice, discount) {
 
-    return basePrice -
-        getSalePrice(
-            basePrice,
-            discount
-        );
+    return getOriginalPrice(basePrice, discount) -
+        getSalePrice(basePrice, discount);
 
 }
 
@@ -1477,7 +1485,7 @@ function renderProducts() {
 
 
         const oldPrice =
-            product.price1Y;
+            getOriginalPrice(product.price1Y, discount);
 
 
         const card =
@@ -1652,6 +1660,9 @@ function renderProductPage() {
             ? currentProduct.price1Y
             : currentProduct.price2Y;
 
+    const selectedOriginalPrice =
+        getOriginalPrice(selectedBasePrice, discount);
+
 
     const selectedSalePrice =
         selectedSize === "1Y"
@@ -1697,7 +1708,7 @@ function renderProductPage() {
             <div class="detail-price">
 
                 <span class="detail-old-price">
-                    Rs. ${selectedBasePrice}
+                    Rs. ${selectedOriginalPrice}
                 </span>
 
                 <span class="detail-sale-price">
@@ -2196,10 +2207,7 @@ function orderOnWhatsApp() {
 
 
         const itemSaving =
-            (
-                item.basePrice -
-                item.salePrice
-            ) *
+            getSaving(item.basePrice, item.discount) *
             item.quantity;
 
 
@@ -2229,7 +2237,7 @@ function orderOnWhatsApp() {
 
 
         message +=
-            `Original Price: Rs. ${item.basePrice}%0A`;
+            `Original Price: Rs. ${getOriginalPrice(item.basePrice, item.discount)}%0A`;
 
 
         message +=

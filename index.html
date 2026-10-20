@@ -1042,10 +1042,15 @@ footer p {
 
     <div class="cart-footer">
 
+        <div class="cart-total" style="font-size:15px; margin-bottom:10px;">
+            <span>Delivery Charges</span>
+            <span id="cartDeliveryCharges">Rs. 300</span>
+        </div>
+
         <div class="cart-total">
 
             <span>
-                Total
+                Total (including delivery)
             </span>
 
             <span id="cartTotal">
@@ -1974,7 +1979,7 @@ function updateCart() {
     }
 
 
-    let total = 0;
+    let subtotal = 0;
 
     let totalItems = 0;
 
@@ -1989,7 +1994,7 @@ function updateCart() {
             item.quantity;
 
 
-        total += itemTotal;
+        subtotal += itemTotal;
 
 
         totalItems +=
@@ -2049,12 +2054,21 @@ function updateCart() {
     });
 
 
+    const deliveryCharges = 300;
+    const total = subtotal + deliveryCharges;
+
     cartCount.textContent =
         totalItems;
 
 
     cartTotal.textContent =
         "Rs. " + total;
+
+    // Show the product subtotal and one flat delivery charge in the cart.
+    const deliveryRow = document.getElementById("cartDeliveryCharges");
+    if (deliveryRow) {
+        deliveryRow.textContent = "Rs. " + deliveryCharges;
+    }
 
 }
 
@@ -2192,7 +2206,7 @@ function orderOnWhatsApp() {
         "I would like to place an order:%0A%0A";
 
 
-    let total = 0;
+    let subtotal = 0;
 
     let totalItems = 0;
 
@@ -2211,7 +2225,7 @@ function orderOnWhatsApp() {
             item.quantity;
 
 
-        total += itemTotal;
+        subtotal += itemTotal;
 
         totalItems +=
             item.quantity;
@@ -2258,16 +2272,23 @@ function orderOnWhatsApp() {
     });
 
 
+    const deliveryCharges = 300;
+    const total = subtotal + deliveryCharges;
+
     message +=
         `Total Items: ${totalItems}%0A`;
 
+    message +=
+        `Product Subtotal: Rs. ${subtotal}%0A`;
+
+    message +=
+        `Delivery Charges: Rs. ${deliveryCharges}%0A`;
 
     message +=
         `Total Saved: Rs. ${totalSaved}%0A`;
 
-
     message +=
-        `Total: Rs. ${total}%0A%0A`;
+        `Grand Total (including delivery): Rs. ${total}%0A%0A`;
 
 
     message +=
